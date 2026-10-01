@@ -201,7 +201,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:
     ]
   }
 }     — JS object with all months data
-  <option value="aug" selected>📅 August 2026 (Aug 1 – Aug 31)</option>   — HTML option tags for dropdown
+  <option value="aug">📅 August 2026 (Aug 1 – Aug 31)</option>   — HTML option tags for dropdown
   aug   — key of the latest month to show on load
   3,558 — total follower count
   Aug 31, 2026  — as of date
@@ -218,8 +218,9 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:
   </div>
   <div class="m-topbar-row2">
     <select class="m-period-select" id="mPeriodSelect" onchange="switchMonth(this.value)">
-      <option value="all">📊 All Months — Combined View</option>
-      <option value="aug" selected>📅 August 2026 (Aug 1 – Aug 31)</option>
+      <option value="sep" selected>📅 September 2026 (Sep 1 – Sep 30)</option>
+          <option value="all">📊 All Months — Combined View</option>
+      <option value="aug">📅 August 2026 (Aug 1 – Aug 31)</option>
     </select>
   </div>
 </div>
@@ -237,8 +238,9 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:
     <div class="period-wrap">
       <span class="period-label">Report Period</span>
       <select class="period-select" id="desktopPeriodSelect" onchange="switchMonth(this.value)">
-        <option value="all">📊 All Months</option>
-        <option value="aug" selected>📅 August 2026 (Aug 1 – Aug 31)</option>
+        <option value="sep" selected>📅 September 2026 (Sep 1 – Sep 30)</option>
+          <option value="all">📊 All Months</option>
+        <option value="aug">📅 August 2026 (Aug 1 – Aug 31)</option>
       </select>
     </div>
     <nav class="sidebar-nav">
@@ -285,8 +287,8 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:
       <div class="hb-top">
         <div class="hb-left">
           <div class="hb-eyebrow">Total Followers</div>
-          <div class="hb-number">3,558</div>
-          <div class="hb-sub">As of <span id="followersAsOf">Aug 31, 2026</span></div>
+          <div class="hb-number">3,724</div>
+          <div class="hb-sub">As of <span id="followersAsOf">Sep 30, 2026</span></div>
         </div>
         <div class="hb-stats">
           <div class="hb-stat"><div class="hb-stat-label">Impressions</div><div class="hb-stat-val" id="bImp">—</div><div class="hb-stat-sub" id="bImpS">—</div></div>
@@ -342,6 +344,39 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:
 // DATA — injected by Claude when building
 // ═══════════════════════════════════════
 const MONTHS = {
+  sep: {
+    label: "September 2026",
+    range: "Sep 1 – Sep 30, 2026",
+    labels: ["9/1", "9/2", "9/3", "9/4", "9/5", "9/6", "9/7", "9/8", "9/9", "9/10", "9/11", "9/12", "9/13", "9/14", "9/15", "9/16", "9/17", "9/18", "9/19", "9/20", "9/21", "9/22", "9/23", "9/24", "9/25", "9/26", "9/27", "9/28", "9/29", "9/30"],
+    impressions: [1756, 1702, 1694, 1319, 1366, 1812, 862, 330, 1222, 769, 3566, 911, 617, 1487, 755, 1374, 587, 676, 392, 253, 578, 383, 138, 158, 93, 456, 116, 86, 315, 91],
+    engagements: [7, 2, 3, 1, 19, 14, 16, 11, 14, 3, 24, 3, 1, 10, 10, 28, 7, 17, 7, 2, 10, 20, 3, 6, 1, 2, 3, 4, 7, 2],
+    followers: [12, 3, 10, 3, 3, 4, 9, 13, 4, 8, 11, 8, 4, 7, 3, 11, 6, 5, 2, 0, 11, 8, 9, 4, 8, 3, 5, 5, 7, 3],
+    totalImp: 25864,
+    totalEng: 257,
+    totalFol: 189,
+    peakDay: "Sep 11",
+    peakVal: "3,566",
+    impTagClass: "blue",
+    impTagText: "📈 Good month",
+    followersAsOf: "Sep 30, 2026",
+    audience: {
+      locations: [{name:"Greater Delhi Area", pct:38}, {name:"Mumbai Metropolitan Region", pct:15}, {name:"Greater Bengaluru Area", pct:12}, {name:"Noida", pct:6}, {name:"Greater Hyderabad Area", pct:2}, {name:"Greater Chennai Area", pct:2}],
+      seniority: [{name:"Senior", pct:24, color:"#6366F1"}, {name:"Director", pct:18, color:"#8B5CF6"}, {name:"CXO", pct:13, color:"#A78BFA"}, {name:"VP", pct:10, color:"#C4B5FD"}, {name:"Manager", pct:9, color:"#DDD6FE"}, {name:"Entry", pct:7, color:"#EDE9FE"}],
+      industries: [{name:"Financial Services", pct:14}, {name:"IT Services and IT Consulting", pct:10}, {name:"Banking", pct:7}, {name:"Human Resources Services", pct:7}, {name:"Business Consulting and Services", pct:6}, {name:"Technology, Information and Internet", pct:4}]
+    },
+    posts: [
+      {title:"Rajiv Goyal 13734334_google Hired The Smartest People Money...", date:"Aug 31, 2026", imp:"7,473", badge:"blue", url:"https://www.linkedin.com/posts/rajiv-goyal-13734334_google-hired-the-smartest-people-money-could-share-7500018450845761536-Vvqb"},
+      {title:"Rajiv Goyal 13734334_nobody Waits For Chest Pain To...", date:"Sep 11, 2026", imp:"4,688", badge:"blue", url:"https://www.linkedin.com/posts/rajiv-goyal-13734334_nobody-waits-for-chest-pain-to-check-blood-share-7504019226576457728-g-tU"},
+      {title:"Rajiv Goyal 13734334_resignation One Ignored Resignation Two", date:"Sep 9, 2026", imp:"4,422", badge:"blue", url:"https://www.linkedin.com/posts/rajiv-goyal-13734334_resignation-one-ignored-resignation-two-share-7503293368832143360--1Zu"},
+      {title:"Rajiv Goyal 13734334_there Was A Sentence I Heard...", date:"Sep 5, 2026", imp:"2,003", badge:"gray", url:"https://www.linkedin.com/posts/rajiv-goyal-13734334_there-was-a-sentence-i-heard-a-lot-in-my-ugcPost-7501876420692918272-6vF0"},
+      {title:"Rajiv Goyal 13734334_before Becoming Cfo I Became A...", date:"Sep 16, 2026", imp:"1,819", badge:"gray", url:"https://www.linkedin.com/posts/rajiv-goyal-13734334_before-becoming-cfo-i-became-a-veterinary-share-7505829434994688001-viqF"},
+      {title:"Rajiv Goyal 13734334_i Used To Dread The Moment...", date:"Sep 7, 2026", imp:"841", badge:"gray", url:"https://www.linkedin.com/posts/rajiv-goyal-13734334_i-used-to-dread-the-moment-someone-asked-share-7502568446002601984-mlK7"},
+      {title:"Rajiv Goyal 13734334_salesforce Checked Whether Men And Women", date:"Aug 27, 2026", imp:"730", badge:"gray", url:"https://www.linkedin.com/posts/rajiv-goyal-13734334_salesforce-checked-whether-men-and-women-share-7498607194985144321-ktUm"},
+      {title:"Rajiv Goyal 13734334_i Was Recently At An Hr...", date:"Sep 18, 2026", imp:"564", badge:"gray", url:"https://www.linkedin.com/posts/rajiv-goyal-13734334_i-was-recently-at-an-hr-conference-where-share-7506545262761385984-dTII"},
+      {title:"Rajiv Goyal 13734334_most Finance People Think Hr Is...", date:"Sep 15, 2026", imp:"417", badge:"gray", url:"https://www.linkedin.com/posts/rajiv-goyal-13734334_most-finance-people-think-hr-is-too-soft-share-7505468669494190080-VXPU"},
+      {title:"Rajiv Goyal 13734334_a Chro Told Me He Could...", date:"Sep 21, 2026", imp:"375", badge:"gray", url:"https://www.linkedin.com/posts/rajiv-goyal-13734334_a-chro-told-me-he-could-not-spend-12-lakh-share-7507648883959832577-quIV"}
+    ]
+  },
   aug: {
     label: "August 2026",
     range: "Aug 1 – Aug 31, 2026",
@@ -366,7 +401,7 @@ const MONTHS = {
     ]
   }
 };
-const DEFAULT_MONTH = 'aug';
+const DEFAULT_MONTH = 'sep';
 
 // ═══════════════════════════════════════
 // CHARTS
